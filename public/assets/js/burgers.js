@@ -2,7 +2,7 @@ $(function () {
     $(".devour").on("click", function (event) {
         console.log("devour clicked")
         var id = $(this).data("id");
-        var newDevoured = $(this).data("newdevoured");
+        var newDevoured = true;
 
         var newDevouredState = {
             devoured: newDevoured
@@ -21,9 +21,18 @@ $(function () {
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
-        var newBurger = {
-            burger_name: $("#ca").val().trim(),
-            devoured: false
+        var name = $("#ca").val().trim();
+        
+        if (name.length > 0) {
+            var newBurger = {
+                burger_name: name,
+                devoured: 0
+            };
+        } else {
+            var newBurger = {
+                burger_name: "burger",
+                devoured: 0
+            };
         };
 
         $.ajax("/api/burgers", {
