@@ -17,7 +17,7 @@
                 {{#each burgers}}
                 {{#unless devoured}}
                 <h4>{{id}}. {{burger_name}}</h4>
-                <button class="devour" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                <button class="devour" data-id="{{id}}">
                     {{#if devoured}}{{else}}Devour{{/if}}
                 </button>
                 <hr><br>

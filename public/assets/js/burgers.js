@@ -1,6 +1,5 @@
 $(function () {
     $(".devour").on("click", function (event) {
-        console.log("devour clicked")
         var id = $(this).data("id");
         var newDevoured = true;
 
